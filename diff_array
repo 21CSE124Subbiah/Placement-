@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class placement{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the Size of the Array A: ");
+        int A=input.nextInt();
+        int[] array_a=new int[A];
+
+        System.out.println("Enter Elements: ");
+        for (int i = 0; i < A; i++) 
+        {
+            System.out.print("");
+            array_a[i] = input.nextInt();
+        }
+        System.out.print("Enter the Size of the Array B: ");
+        int B=input.nextInt();
+
+        int[] array_b=new int[B];
+        System.out.println("Enter Elements: ");
+        for (int i = 0; i < B; i++) 
+        {
+            System.out.print("");
+            array_b[i] = input.nextInt();
+        }
+        System.out.print("Array A Elements: ");
+
+        for (int Elements : array_a) 
+        {
+            System.out.print(Elements+ " ");    
+        }
+        System.out.println();
+        System.out.print("Array B Elements: ");
+
+        for (int Elements : array_b) 
+        {
+            System.out.print(Elements+ " ");    
+        }
+        System.out.println();
+        substract(array_a,array_b);
+        input.close();
+    }
+    private static void substract(int[] array_a, int[] array_b) 
+    {
+        int sum1=0,sum2=0;
+        for (int Elements : array_a) 
+        {
+            sum1 = (sum1 * 10) + Elements;
+        }
+        for (int Elements : array_b) 
+        {
+            sum2 = (sum2 * 10) + Elements;
+        }
+        sum1 = (int)Math.abs(sum1 - sum2);
+        int[] array_c = new int[Math.max(array_a.length, array_b.length)];
+        for (int i =  array_c.length - 1; i >= 0; i--) 
+        {
+            array_c[i] = sum1 %10;
+            sum1 /= 10;
+        }
+        System.out.print("The Difference is: ");
+        for (int Elements : array_c) 
+        {
+            System.out.print(Elements+ " ");    
+        }
+    }
+}
