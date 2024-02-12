@@ -24,7 +24,7 @@ public class Placement
 	        }
 	    }
 	
-	    System.out.println("Pairs: "+d+" is "+c);
+	    System.out.println("Pairs:"+c);
 	    
 	}
 }
